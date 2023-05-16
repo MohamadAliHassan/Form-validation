@@ -6,12 +6,12 @@ const password2 = document.getElementById("password2");
 
 //show input error message
 function showError(input, message) {
-  //Försök nå form control diven från HTML
+  
   const formControl = input.parentElement;
-  //Overwrite the class
+  
   formControl.className = "form-control error";
 
-  //Ändra error message small tagen till något annat using innerText. querySelector takes in class, id and tags.
+  
   const small = formControl.querySelector("small");
   small.innerText = message;
 }
@@ -70,15 +70,15 @@ function checkLength(input, min, max) {
 
 //Gör att alla input fields har ett stort bokstav i ordet.
 function getFieldNames(input) {
-  return input.id.charAt(0).toUpperCase() + input.id.slice(1); //We´re adding the rest of the word without the first word and thats why we are using slice. We are not including the first which is a 0 indexed.
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1); 
 }
 
 //Event listeners
 form.addEventListener("submit", function (e) {
-  e.preventDefault(); //Prevent it from sending a request to the backend.
+  e.preventDefault(); 
 
   checkRequired([username, email, password, password2]);
-  checkLength(username, 3, 15); //A minimum of 3 and max 15 for the lenght of the username
+  checkLength(username, 3, 15); 
   checkLength(password, 5, 20);
   validateEmail();
   matchedPassword(password, password2);
