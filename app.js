@@ -68,7 +68,7 @@ function checkLength(input, min, max) {
   }
 }
 
-//Gör att alla input fields har ett stort bokstav i ordet.
+
 function getFieldNames(input) {
   return input.id.charAt(0).toUpperCase() + input.id.slice(1); 
 }
